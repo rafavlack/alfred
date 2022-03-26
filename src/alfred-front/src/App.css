@@ -1,38 +1,55 @@
-.App {
-  text-align: center;
+.body
+{
+  background: rgb(2,0,36);
+  background: -moz-linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(64,59,113,1) 55%, rgba(30,78,88,1) 95%);
+  background: -webkit-linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(64,59,113,1) 55%, rgba(30,78,88,1) 95%);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(64,59,113,1) 55%, rgba(30,78,88,1) 95%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#020024",endColorstr="#1e4e58",GradientType=1);
+  padding-bottom: 30px;
+}
+#navbar {
+  background-color: #292929;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+#body_container{
+  padding: 100px;
+
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#second_cards{
+  padding-top: 40px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#id_footer{
+  padding: 30px;
+  background: #292929;
+  border-top: 10px solid rgba(255,255,255,.2);
 }
 
-.App-link {
-  color: #61dafb;
+#id_footer a{
+ opacity: 0.6;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.container_logo{
+  opacity: 0.6;
+}
+
+#social_net a{
+  padding: 10px;
+  color: #b6c624;
+  font-size: 30px;
+}
+
+#social_net_nav a{
+  padding-right: 30px;
+  color: #4C759F;
+  font-size: 30px;
+}
+
+#operaciones_nav a{
+  padding-left: 40px;
+  color: #4C759F;
+  font-size: 30px;
 }
