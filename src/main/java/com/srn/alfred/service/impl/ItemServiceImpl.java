@@ -8,6 +8,8 @@ import com.srn.alfred.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
+
 @Service
 public class ItemServiceImpl implements ItemService {
 
@@ -21,8 +23,8 @@ public class ItemServiceImpl implements ItemService {
    @Override
    public Item createItem(ProductDto productDto, int quantity) {
       Item newItem = new Item();
-      newItem.setItemName(productDto.getName());
-      newItem.setItemQuantity(quantity);
+      newItem.setName(productDto.getName());
+      newItem.setQuantity(quantity);
       newItem.setUnitPrice(productDto.getProductDetails().getUnitPrice());
       newItem.setLineValue(Utils.calculateValue(productDto.getProductDetails().getUnitPrice(), quantity));
       return itemRepository.save(newItem);
@@ -30,8 +32,9 @@ public class ItemServiceImpl implements ItemService {
 
    @Override
    public Item updateItem(Item item, int quantity) {
-      item.setItemQuantity(quantity);
-      item.setLineValue(Utils.calculateValue(item.getUnitPrice(), quantity));
+      item.setQuantity(item.getQuantity() + quantity);
+      item.setLineValue(item.getLineValue()
+            .add (item.getUnitPrice().multiply(BigDecimal.valueOf( quantity))));
       return itemRepository.save(item);
    }
 

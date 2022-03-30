@@ -4,7 +4,14 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import java.math.BigDecimal;
 
 @Entity
@@ -19,21 +26,19 @@ public class Item {
    private Integer id;
 
    @Column
-   private String itemName;
+   private String name;
 
    @ManyToOne(fetch = FetchType.LAZY)
    private Cart cart;
 
    @Column
-   private int itemQuantity;
+   private int quantity;
 
    @Column
    private BigDecimal unitPrice;
 
    @Column
    private BigDecimal lineValue;
-
-
 
    public Integer getId() {
       return id;
@@ -43,12 +48,12 @@ public class Item {
       this.id = id;
    }
 
-   public String getItemName() {
-      return itemName;
+   public String getName() {
+      return name;
    }
 
-   public void setItemName(String itemName) {
-      this.itemName = itemName;
+   public void setName(String name) {
+      this.name = name;
    }
 
    public Cart getCart() {
@@ -59,12 +64,12 @@ public class Item {
       this.cart = cart;
    }
 
-   public int getItemQuantity() {
-      return itemQuantity;
+   public int getQuantity() {
+      return quantity;
    }
 
-   public void setItemQuantity(int itemQuantity) {
-      this.itemQuantity = itemQuantity;
+   public void setQuantity(int quantity) {
+      this.quantity = quantity;
    }
 
    public BigDecimal getUnitPrice() {
