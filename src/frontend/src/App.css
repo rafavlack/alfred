@@ -14,8 +14,11 @@
 
 #body_container{
   padding: 100px;
+}
 
-
+#body_container a{
+ text-decoration: none;
+  color: #f1eaea;
 }
 
 #second_cards{
@@ -42,14 +45,14 @@
   font-size: 30px;
 }
 
-#social_net_nav a{
-  padding-right: 30px;
+#social_net_nav *{
+ padding-right: 5px;
   color: #4C759F;
   font-size: 30px;
 }
 
 #operaciones_nav a{
-  padding-left: 40px;
+  padding-left: 30px;
   color: #4C759F;
   font-size: 30px;
 }

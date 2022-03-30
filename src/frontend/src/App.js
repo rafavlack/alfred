@@ -5,15 +5,14 @@ import Footer_App from "./components/Footer_App";
 
 
 
-class App extends Component{
-    render() {
+function App (){
+
         return (
             <>
                 <Navigation_Bar />
                 <Footer_App />
             </>
         );
-    }
 }
 
 export default App;

@@ -1,19 +1,16 @@
 import './FormCustomer.css'
 import React, {Component, useState} from "react";
-import {Button, Card, Carousel, Col, Container, Form, InputGroup, Row} from "react-bootstrap";
+import {Button,  Col, Form, InputGroup, Row} from "react-bootstrap";
 import {
     EnvironmentOutlined,
-    FileMarkdownFilled,
-    HeatMapOutlined, KeyOutlined,
+     KeyOutlined,
     MailOutlined,
     PhoneOutlined,
     UserAddOutlined, UserOutlined
 } from "@ant-design/icons";
 
-
 function FormADDCustom() {
     const [validated, setValidated] = useState(false);
-
     const handleSubmit = (event) => {
         const form = event.currentTarget;
         if (form.checkValidity() === false) {
@@ -29,7 +26,7 @@ function FormADDCustom() {
             <div className="d-flex justify-content-lg-center">
             <Form  noValidate validated={validated} onSubmit={handleSubmit}>
                 <Row className="mb-2">
-                    <Form.Group as={Col} md="12" controlId="validationCustom1">
+                    <Form.Group as={Col} md="12">
                         <Form.Label><UserAddOutlined />  Full name</Form.Label>
                         <InputGroup hasValidation>
                             <Form.Control
@@ -46,7 +43,7 @@ function FormADDCustom() {
                 </Row>
 
                 <Row className="mb-2">
-                    <Form.Group as={Col} md="6" controlId="validationCustom2" >
+                    <Form.Group as={Col} md="6" >
                         <Form.Label><MailOutlined />  Email</Form.Label>
                         <InputGroup hasValidation>
                             <Form.Control
@@ -62,7 +59,7 @@ function FormADDCustom() {
                         </InputGroup>
                     </Form.Group>
 
-                    <Form.Group as={Col} md="6" controlId="validationCustom3">
+                    <Form.Group as={Col} md="6" >
                         <Form.Label><PhoneOutlined />  Phone number</Form.Label>
                         <InputGroup hasValidation>
                             <Form.Control
@@ -77,7 +74,7 @@ function FormADDCustom() {
                     </Form.Group>
                 </Row>
                 <Row className="mb-2">
-                    <Form.Group as={Col} md="12" controlId="validationCustom5">
+                    <Form.Group as={Col} md="12" >
                         <Form.Label><EnvironmentOutlined />  Address</Form.Label>
                         <InputGroup hasValidation>
                             <Form.Control
@@ -93,7 +90,7 @@ function FormADDCustom() {
                     </Form.Group>
                 </Row>
                 <Row className="mb-2">
-                    <Form.Group as={Col} md="12" controlId="validationCustom6">
+                    <Form.Group as={Col} md="12" >
                         <Form.Label><UserOutlined />  Username</Form.Label>
                         <InputGroup hasValidation>
                             <Form.Control
@@ -110,7 +107,7 @@ function FormADDCustom() {
                 </Row>
 
                 <Row className="mb-2">
-                    <Form.Group as={Col} md="6" controlId="validationCustom7">
+                    <Form.Group as={Col} md="6" >
                         <Form.Label><KeyOutlined />  Password</Form.Label>
                         <InputGroup hasValidation>
                             <Form.Control
@@ -124,7 +121,7 @@ function FormADDCustom() {
                             </Form.Control.Feedback>
                         </InputGroup>
                     </Form.Group>
-                    <Form.Group as={Col} md="6" controlId="validationCustom7">
+                    <Form.Group as={Col} md="6" >
                         <Form.Label><KeyOutlined /> Repeat your Password</Form.Label>
                         <InputGroup hasValidation>
                             <Form.Control
@@ -147,13 +144,12 @@ function FormADDCustom() {
     );
 }
 
+
 class FormCustomer extends Component{
     render() {
 
         return(
             <FormADDCustom/>
-
-
         );
     }
 }

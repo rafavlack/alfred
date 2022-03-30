@@ -4,14 +4,16 @@ import {
     GithubOutlined,
     LinkedinOutlined,
     LoginOutlined,
-    MailOutlined,
-    ShoppingCartOutlined,
+    MailOutlined, QuestionCircleOutlined, TeamOutlined,
     UserAddOutlined
 } from "@ant-design/icons";
-import {Button, Navbar, OverlayTrigger, Tooltip} from "react-bootstrap";
+import { Navbar, OverlayTrigger, Tooltip} from "react-bootstrap";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./Home";
 import FormCustomer from "./FormCustomer";
+import AddtoCar from "./AddtoCar";
+import FormAllCustomer from "./FormAllCustomer/FormAllCustomer";
+import ModalAboutProyect from "./ModalAboutProyect/ModalAboutProyect";
 
 const renderTooltip = (props) => (
     <Tooltip id="icon-tooltip" {...props}>
@@ -25,8 +27,14 @@ const renderTooltip1 = (props) => (
     </Tooltip>
 );
 
-class Navigation_Bar extends Component{
-    render() {
+const renderTooltip2 = (props) => (
+    <Tooltip id="icon-tooltip" {...props}>
+       List All Customer
+    </Tooltip>
+);
+
+
+function Navigation_Bar(){
         return(
             <Router>
                 <Navbar id="navbar">
@@ -54,17 +62,25 @@ class Navigation_Bar extends Component{
                                 <OverlayTrigger
                                     placement="right"
                                     delay={{ show: 250, hide: 400 }}
+                                    overlay={renderTooltip2}
+                                >
+                                    <Link to="/listAllCustomers"><TeamOutlined /></Link>
+                                </OverlayTrigger>
+
+                                <OverlayTrigger
+                                    placement="right"
+                                    delay={{ show: 250, hide: 400 }}
                                     overlay={renderTooltip1}
                                 >
-                                    <Link to="/addCustomer"><LoginOutlined/></Link>
+                                    <Link to="/addtocar"><LoginOutlined/></Link>
                                 </OverlayTrigger>
                             </div>
                         </Navbar.Text>
                     </Navbar.Collapse>
-
                     <Navbar.Collapse className="justify-content-end">
                         <Navbar.Text>
                             <div id="social_net_nav">
+                                <ModalAboutProyect />
                                 <a href="mailto:rafavlack@gmail.com"><MailOutlined/></a>
                                 <a  href="https://github.com/rafavlack/"  target="_blank" rel="noopener noreferrer"><GithubOutlined/></a>
                                 <a href="https://www.linkedin.com/in/rafael-barrientos-holder-666a6912a/"  target="_blank" rel="noopener noreferrer"><LinkedinOutlined /></a>
@@ -76,11 +92,11 @@ class Navigation_Bar extends Component{
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/addCustomer" element={<FormCustomer />} />
+                    <Route path="/listAllCustomers" element={<FormAllCustomer />} />
                 </Routes>
             </Router>
 
         );
-    }
 }
 
 export default Navigation_Bar;
