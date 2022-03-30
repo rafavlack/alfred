@@ -1,7 +1,9 @@
 package com.srn.alfred.controller;
 
 import com.srn.alfred.Utils.exceptions.ExistingElementException;
+import com.srn.alfred.domain.Customer;
 import com.srn.alfred.dto.ProductDto;
+import com.srn.alfred.service.CustomerService;
 import com.srn.alfred.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.ConstraintViolationException;
 import javax.validation.Valid;
+import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Set;
 
@@ -17,8 +20,14 @@ import java.util.Set;
 @RequestMapping("/products")
 public class ProductController {
 
+   private final ProductService productService;
+   private final CustomerService customerService;
+
    @Autowired
-   private ProductService productService;
+   public ProductController(ProductService productService, CustomerService customerService) {
+      this.productService = productService;
+      this.customerService = customerService;
+   }
 
    @PostMapping("/new")
    ResponseEntity<? extends Object> createNew(@Valid @RequestBody ProductDto productDto) {
@@ -33,6 +42,12 @@ public class ProductController {
    @GetMapping("/all")
    ResponseEntity<Set<ProductDto>> readAll() {
       return new ResponseEntity<>(productService.readAllProducts(), HttpStatus.OK);
+   }
+
+
+   @GetMapping("/allConsumers")
+   List<Customer> readAllCosumers() {
+      return customerService.findAllCustomer();
    }
 
    @GetMapping("{name}")

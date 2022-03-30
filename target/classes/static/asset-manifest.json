@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.ae39511c.css",
+    "main.js": "/static/js/main.2f9dc520.js",
+    "static/js/787.5f20fa8e.chunk.js": "/static/js/787.5f20fa8e.chunk.js",
+    "static/media/carrousel_3.jpg": "/static/media/carrousel_3.2000cdbd3bba0f06c638.jpg",
+    "static/media/carrousel_2.jpeg": "/static/media/carrousel_2.75b1734d4168ccda1f2d.jpeg",
+    "static/media/carrousel_5.jpg": "/static/media/carrousel_5.26d4e8a12d39010a922d.jpg",
+    "static/media/carrousel_4.jpg": "/static/media/carrousel_4.319c26632d5466c7b404.jpg",
+    "static/media/carrousel_1.jpeg": "/static/media/carrousel_1.601c28089f52712abb90.jpeg",
+    "static/media/mouse_keyboard.jpg": "/static/media/mouse_keyboard.6d10abf5b40a070849cb.jpg",
+    "static/media/logo_javadev.png": "/static/media/logo_javadev.c33d42ec479f3f945a5f.png",
+    "static/media/bootstrap-icons.png": "/static/media/bootstrap-icons.87b2b41e1d703d5fc6c1.png",
+    "static/media/casco.jpg": "/static/media/casco.d2af134d07cea82f198f.jpg",
+    "static/media/spring_boot_logo.png": "/static/media/spring_boot_logo.25078c2fd2a6ee5ce22e.png",
+    "static/media/silla.jpg": "/static/media/silla.bbca053d666d0c3cb9f9.jpg",
+    "static/media/logo.png": "/static/media/logo.42f83d1f779829af1d40.png",
+    "static/media/ant-design-seeklogo.com.svg": "/static/media/ant-design-seeklogo.com.70fb4cf1527e384e01bccf2f0dbc73b6.svg",
+    "index.html": "/index.html",
+    "main.ae39511c.css.map": "/static/css/main.ae39511c.css.map",
+    "main.2f9dc520.js.map": "/static/js/main.2f9dc520.js.map",
+    "787.5f20fa8e.chunk.js.map": "/static/js/787.5f20fa8e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ae39511c.css",
+    "static/js/main.2f9dc520.js"
+  ]
+}
