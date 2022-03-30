@@ -26,6 +26,9 @@ public class Cart {
    @Column
    private BigDecimal cartValue;
 
+   @Column
+   private Status cartStatus;
+
    public void addItem(Item item) {
       itemsInCart.add(item);
    }

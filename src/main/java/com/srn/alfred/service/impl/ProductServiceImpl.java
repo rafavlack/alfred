@@ -30,12 +30,12 @@ public class ProductServiceImpl implements ProductService {
    }
 
    @Override
-   public ProductDto createProduct(ProductDto productDto) throws ExistingElementException {
+   public ProductDto createProduct(ProductDto productDto) throws ExistingElementException  {
       if(!productRepository.existsByName(productDto.getName())) {
          productRepository.save(converter.transformToEntity(productDto));
          return converter.transformToDto(findProductByName(productDto.getName()));
       } else {
-         throw new ExistingElementException("The product you are trying to add is already created.");
+         throw new ExistingElementException ("The product you are trying to add is already created.");
       }
    }
 
@@ -61,7 +61,7 @@ public class ProductServiceImpl implements ProductService {
    public ProductDto updateProduct(ProductDto updated) {
       var existingProduct = findProductByName(updated.getName());
       if (existingProduct != null) {
-         BeanUtils.copyProperties(updated, existingProduct);
+         BeanUtils.copyProperties(updated, existingProduct, "name");
          productRepository.save(existingProduct);
          return converter.transformToDto(existingProduct);
       } else {
@@ -70,8 +70,12 @@ public class ProductServiceImpl implements ProductService {
    }
 
    @Override
-   public void deleteProduct(Long id) {
-      productRepository.deleteById(id);
+   public void deleteProduct(Long id) throws NoSuchElementException{
+      if (productRepository.existsById(id)) {
+         productRepository.deleteById(id);
+      } else {
+         throw new NoSuchElementException("The product with ID " + id + " does not exist in the database. Check again!");
+      }
    }
 
    private Product findProductByName(String name) {
